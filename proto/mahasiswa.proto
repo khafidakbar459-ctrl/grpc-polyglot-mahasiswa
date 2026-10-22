@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package mahasiswa;
+
+option go_package = "mahasiswa-grpc/mahasiswa";
+
+service MahasiswaService {
+  rpc GetMahasiswa (MahasiswaRequest) returns (MahasiswaResponse);
+}
+
+message MahasiswaRequest {
+  int32 id = 1;
+}
+
+message MahasiswaResponse {
+  int32 id = 1;
+  string nama = 2;
+  string jurusan = 3;
+}
